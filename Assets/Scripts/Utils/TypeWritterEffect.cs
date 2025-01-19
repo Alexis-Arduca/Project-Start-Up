@@ -4,7 +4,7 @@ using TMPro;
 
 public class TypewriterEffect : MonoBehaviour
 {
-    private TextMeshProUGUI textComponent;
+    public TextMeshProUGUI textComponent;
     private string fullText;
     public float typingSpeed = 0.05f;
     public float moveDuration = 2f;
@@ -14,7 +14,7 @@ public class TypewriterEffect : MonoBehaviour
 
     public void Start()
     {
-        textComponent = GameObject.Find("DeathText").GetComponent<TextMeshProUGUI>();
+        
     }
 
     public void StartText(string msg)
