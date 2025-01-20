@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using Yarn.Unity.Editor;
 
 public class StartDialogue : MonoBehaviour
 {
@@ -8,7 +10,8 @@ public class StartDialogue : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Dialogue started.");
+            // Start Yarn
+            FindObjectOfType<DialogueRunner>().StartDialogue("Start");
         }
     }
 }
