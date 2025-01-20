@@ -42,6 +42,7 @@ public class LeavingPost : MonoBehaviour
             StartCoroutine(FadeToBlack(fadeDuration));
         }
     }
+
     private IEnumerator FadeToBlack(float duration)
     {
         isFading = true;

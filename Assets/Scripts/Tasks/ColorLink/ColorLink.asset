@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3439a05bdc630b468ad4e8a75691735, type: 3}
+  m_Name: ColorLink
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 
+  taskName: ColorLink
+  description: Connect the colors together to win
+  taskPrefab: {fileID: 8793481276751931340, guid: dd1f4bc042bf6a84e9a84f818ac7852c, type: 3}
+  timeLimit: 0
+  score: 0
+  isCompleted: 0
+  rewardPoints: 0
+  rewardItem: 

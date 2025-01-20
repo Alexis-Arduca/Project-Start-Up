@@ -5,6 +5,8 @@ public class GameEventsManager : MonoBehaviour
 {
     public static GameEventsManager instance { get; private set; }
 
+    public MiscEvents miscEvents;
+
     private void Awake()
     {
         if (instance != null)
@@ -14,5 +16,6 @@ public class GameEventsManager : MonoBehaviour
         instance = this;
 
         // initialize all events
+        miscEvents = new MiscEvents();
     }
 }
