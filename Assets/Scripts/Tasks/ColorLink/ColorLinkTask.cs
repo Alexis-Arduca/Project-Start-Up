@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class ColorLinkTask : MonoBehaviour
 {
-    public GameObject gridContainer;
+    private GameObject container;
+    private GameObject gridContainer;
     private int points;
 
     // Start is called before the first frame update
     void Start()
     {
+        container = GameEventsManager.instance.ColorLink;
+        gridContainer = GameEventsManager.instance.GridContainer;
+
+        if (container != null)
+        {
+            container.SetActive(true);
+            Debug.Log("Container activé via GameManager !");
+        }
         GameEventsManager.instance.miscEvents.onColorMouseRelease += GridCheck;
     }
 
@@ -65,6 +74,7 @@ public class ColorLinkTask : MonoBehaviour
 
             if (points == 4) {
                 Debug.Log("Won");
+                container.SetActive(false);
             } else {
                 Debug.Log("Lose");
             }
@@ -121,6 +131,7 @@ public class ColorLinkTask : MonoBehaviour
 
     public void ResetButton()
     {
+        points = 0;
         GameEventsManager.instance.miscEvents.OnResetColor();
     }
 }

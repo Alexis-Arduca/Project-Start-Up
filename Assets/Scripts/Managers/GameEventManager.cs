@@ -7,6 +7,9 @@ public class GameEventsManager : MonoBehaviour
 
     public MiscEvents miscEvents;
 
+    public GameObject ColorLink;
+    public GameObject GridContainer;
+
     private void Awake()
     {
         if (instance != null)

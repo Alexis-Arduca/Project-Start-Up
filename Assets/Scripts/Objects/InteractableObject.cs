@@ -28,7 +28,7 @@ public class InteractableObject : MonoBehaviour
         {
             instantiatedTask = Instantiate(task.taskPrefab);
 
-            TestTask taskScript = instantiatedTask.GetComponent<TestTask>();
+            ColorLinkTask taskScript = instantiatedTask.GetComponent<ColorLinkTask>();
             if (taskScript != null)
             {
                 taskScript.enabled = true;
