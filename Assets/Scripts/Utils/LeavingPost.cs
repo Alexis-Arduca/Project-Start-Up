@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class LeavingPost : MonoBehaviour
 {
     private GameObject blackPanel;
+    private GameObject quitButton;
+    private GameObject homeButton;
     private Image panelImage;
     private bool isFading = false;
     public TypewriterEffect typewriterEffect;
@@ -18,6 +20,9 @@ public class LeavingPost : MonoBehaviour
         if (canvas != null)
         {
             Transform panelTransform = canvas.transform.Find("BlackPanel");
+            quitButton = GameObject.Find("Buttons").gameObject;
+
+            quitButton.SetActive(false);
 
             if (panelTransform != null)
             {
@@ -71,5 +76,10 @@ public class LeavingPost : MonoBehaviour
         {
             typewriterEffect.StartText(messageToShow);
         }
+
+        /* Buttons (do nothing rn)
+        quitButton.SetActive(true);
+        homeButton.SetActive(true);
+        */
     }
 }

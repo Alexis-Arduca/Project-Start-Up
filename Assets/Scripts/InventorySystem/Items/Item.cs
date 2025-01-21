@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
@@ -6,13 +7,13 @@ public class Item : ScriptableObject
     public string itemName;
     public bool isEquipped;
     public int slotIndex;
-    public Sprite itemSprite;
+    public Texture itemImage;
 
-    public Item(string name, Sprite sprite)
+    public Item(string name, Texture image)
     {
         itemName = name;
         isEquipped = false;
-        itemSprite = sprite;
+        itemImage = image;
     }
 
     public virtual void Use()

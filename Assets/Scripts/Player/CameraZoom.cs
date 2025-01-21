@@ -15,18 +15,18 @@ public class CameraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cameraPosition = gameObject.transform.position;
+        // cameraPosition = gameObject.transform.position;
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f ) {
-            if (cameraPosition.y > 4) {
-                cameraPosition.y -= 0.2f;
-                gameObject.transform.position = cameraPosition;
-            }
-        } else if (Input.GetAxis("Mouse ScrollWheel") < 0f ) {
-            if (cameraPosition.y < 8) {
-                cameraPosition.y += 0.2f;
-                gameObject.transform.position = cameraPosition;
-            }
-        } 
+        // if (Input.GetAxis("Mouse ScrollWheel") > 0f ) {
+        //     if (cameraPosition.y > 4) {
+        //         cameraPosition.y -= 0.2f;
+        //         gameObject.transform.position = cameraPosition;
+        //     }
+        // } else if (Input.GetAxis("Mouse ScrollWheel") < 0f ) {
+        //     if (cameraPosition.y < 8) {
+        //         cameraPosition.y += 0.2f;
+        //         gameObject.transform.position = cameraPosition;
+        //     }
+        // } 
     }
 }
