@@ -8,9 +8,7 @@ public class StartDialogue : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            // Start Yarn
+        if (other.CompareTag("Player")) {
             FindObjectOfType<DialogueRunner>().StartDialogue("Start");
         }
     }
