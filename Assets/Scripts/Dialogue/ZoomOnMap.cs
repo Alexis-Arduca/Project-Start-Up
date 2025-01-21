@@ -30,7 +30,7 @@ public class ZoomOnMap : MonoBehaviour
         originalCameraPosition = cameraPosition;
         originalCameraRotation = cameraTransform.rotation;
         
-        cameraSpeed = 0.01f;
+        cameraSpeed = 0.03f;
     }
     
     private void Update()
