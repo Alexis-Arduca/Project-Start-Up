@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,12 @@ public class StartDialogue : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag("Player"))
             FindObjectOfType<DialogueRunner>().StartDialogue("Start");
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        FindObjectOfType<DialogueRunner>().Stop();
     }
 }
