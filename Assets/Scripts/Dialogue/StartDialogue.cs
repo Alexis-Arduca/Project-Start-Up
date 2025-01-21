@@ -7,13 +7,13 @@ using Yarn.Unity.Editor;
 
 public class StartDialogue : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
             FindObjectOfType<DialogueRunner>().StartDialogue("Start");
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
         FindObjectOfType<DialogueRunner>().Stop();
     }
