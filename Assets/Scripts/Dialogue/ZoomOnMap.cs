@@ -30,15 +30,17 @@ public class ZoomOnMap : MonoBehaviour
         originalCameraPosition = cameraPosition;
         originalCameraRotation = cameraTransform.rotation;
         
-        cameraSpeed = 0.1f;
+        cameraSpeed = 0.01f;
     }
     
     private void Update()
     {
+        Vector3 offset = new Vector3(0, -1, 0);
+        
         if (zoomed)
         {
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, cameraPosition, cameraSpeed);
-            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, Quaternion.Euler(90, 0, 0), cameraSpeed);
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, mapPosition - offset, cameraSpeed);
+            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, Quaternion.Euler(90, 0, 180), cameraSpeed);
         }
         else
         {
