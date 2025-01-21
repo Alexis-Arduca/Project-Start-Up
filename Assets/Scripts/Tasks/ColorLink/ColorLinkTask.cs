@@ -38,6 +38,7 @@ public class ColorLinkTask : MonoBehaviour
             bool[,] visited = new bool[5, 5];
 
             int index = 1;
+            points = 0;
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)

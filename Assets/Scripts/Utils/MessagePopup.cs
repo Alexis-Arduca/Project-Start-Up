@@ -13,7 +13,6 @@ public class MessagePopup : MonoBehaviour
     void Start()
     {
         objectPopUp = GameObject.Find("MessagePopUp");
-        objectPopUp.SetActive(false);
         messagePopUp = objectPopUp.GetComponent<TMP_Text>();
     }
 

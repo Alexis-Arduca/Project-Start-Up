@@ -17,6 +17,7 @@ public class StairsExit : MonoBehaviour
     {
         if (isPlayerInRange && Input.GetKeyDown(interactionKey))
         {
+            GameEventsManager.instance.playerEvents.OnActionChange();
             confirmationPanel.SetActive(true);
         }
     }

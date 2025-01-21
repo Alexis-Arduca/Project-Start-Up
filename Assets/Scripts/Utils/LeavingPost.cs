@@ -43,6 +43,11 @@ public class LeavingPost : MonoBehaviour
         }
     }
 
+    public void PlayerAction()
+    {
+        GameEventsManager.instance.playerEvents.OnActionChange();
+    }
+
     private IEnumerator FadeToBlack(float duration)
     {
         isFading = true;
