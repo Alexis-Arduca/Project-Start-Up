@@ -17,7 +17,8 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMovement.HandleMovement();
+        playerMovement.HandleMovement(Camera.main.transform);
         playerItem.HandleItemUsage();
     }
+
 }
