@@ -6,6 +6,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager instance { get; private set; }
 
     public MiscEvents miscEvents;
+    public PlayerEvents playerEvents;
 
     public GameObject ColorLink;
     public GameObject GridContainer;
@@ -20,5 +21,6 @@ public class GameEventsManager : MonoBehaviour
 
         // initialize all events
         miscEvents = new MiscEvents();
+        playerEvents = new PlayerEvents();
     }
 }

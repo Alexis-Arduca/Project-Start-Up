@@ -28,12 +28,6 @@ public class ColorLinkTask : MonoBehaviour
         GameEventsManager.instance.miscEvents.onColorMouseRelease -= GridCheck;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void GridCheck()
     {
         Transform[] gridElements = gridContainer.GetComponentsInChildren<Transform>();
@@ -75,8 +69,7 @@ public class ColorLinkTask : MonoBehaviour
             if (points == 4) {
                 Debug.Log("Won");
                 container.SetActive(false);
-            } else {
-                Debug.Log("Lose");
+                GameEventsManager.instance.playerEvents.OnActionChange();
             }
         }
     }
@@ -107,7 +100,6 @@ public class ColorLinkTask : MonoBehaviour
                 {
                     if (newImage.GetIsBaseColor() == true)
                     {
-                        print(newI + newJ);
                         Debug.Log("Connection Create !");
                         return true;
                     }

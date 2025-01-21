@@ -21,12 +21,6 @@ public class Tasks : ScriptableObject
     public int rewardPoints;
     public string rewardItem;
 
-    public Tasks(string name)
-    {
-        taskName = name;
-        isCompleted = false;
-    }
-
     public void InitializeTask()
     {
         isCompleted = false;

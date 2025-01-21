@@ -27,16 +27,7 @@ public class InteractableObject : MonoBehaviour
         if (task.taskPrefab != null)
         {
             instantiatedTask = Instantiate(task.taskPrefab);
-
-            ColorLinkTask taskScript = instantiatedTask.GetComponent<ColorLinkTask>();
-            if (taskScript != null)
-            {
-                taskScript.enabled = true;
-            }
-            else
-            {
-                Debug.LogWarning("No script on the prefab.");
-            }
+            GameEventsManager.instance.playerEvents.OnActionChange();
         }
         else
         {
