@@ -12,7 +12,3 @@ public class Map : Item
         Debug.Log("Using Map");
     }
 }
-
-/*
-Just an example of the implementation for an item
-*/

@@ -17,14 +17,14 @@ public class ColorLink : MonoBehaviour
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        GameEventsManager.instance.miscEvents.onColorSet += ColorSet;
-        GameEventsManager.instance.miscEvents.onResetColor += ResetColor;
+        GameEventsManager.instance.colorLinkEvents.onColorSet += ColorSet;
+        GameEventsManager.instance.colorLinkEvents.onResetColor += ResetColor;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.miscEvents.onColorSet -= ColorSet;
-        GameEventsManager.instance.miscEvents.onResetColor -= ResetColor;
+        GameEventsManager.instance.colorLinkEvents.onColorSet -= ColorSet;
+        GameEventsManager.instance.colorLinkEvents.onResetColor -= ResetColor;
     }
 
     public void Update()
@@ -38,18 +38,18 @@ public class ColorLink : MonoBehaviour
             {
                 currentColor = myColor;
                 isClickingOnElement = true;
-                GameEventsManager.instance.miscEvents.OnColorSet(myColor);
+                GameEventsManager.instance.colorLinkEvents.OnColorSet(myColor);
             }
 
             if (Input.GetMouseButton(0) && isClickingOnElement)
             {
-                GameEventsManager.instance.miscEvents.OnColorSet(currentColor);
+                GameEventsManager.instance.colorLinkEvents.OnColorSet(currentColor);
             }
 
             if (Input.GetMouseButtonUp(0) && isClickingOnElement)
             {
                 isClickingOnElement = false;
-                GameEventsManager.instance.miscEvents.OnColorMouseRelease();
+                GameEventsManager.instance.colorLinkEvents.OnColorMouseRelease();
             }
         }
         else

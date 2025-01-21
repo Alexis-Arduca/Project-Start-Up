@@ -20,9 +20,4 @@ public class Item : ScriptableObject
     {
         Debug.Log($"{itemName} use !");
     }
-
-    private void OnDisable()
-    {
-        isEquipped = false;
-    }
 }

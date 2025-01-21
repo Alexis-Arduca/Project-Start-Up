@@ -12,7 +12,3 @@ public class Flashlight : Item
         Debug.Log("Using Flashlight");
     }
 }
-
-/*
-Just an example of the implementation for an item
-*/

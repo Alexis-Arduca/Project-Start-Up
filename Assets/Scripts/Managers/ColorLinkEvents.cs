@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class MiscEvents
+public class ColorLinkEvents
 {
     public event Action<int> onColorSet;
     public void OnColorSet(int color)

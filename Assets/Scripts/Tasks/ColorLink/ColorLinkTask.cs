@@ -20,12 +20,12 @@ public class ColorLinkTask : MonoBehaviour
             container.SetActive(true);
             Debug.Log("Container activé via GameManager !");
         }
-        GameEventsManager.instance.miscEvents.onColorMouseRelease += GridCheck;
+        GameEventsManager.instance.colorLinkEvents.onColorMouseRelease += GridCheck;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.miscEvents.onColorMouseRelease -= GridCheck;
+        GameEventsManager.instance.colorLinkEvents.onColorMouseRelease -= GridCheck;
     }
 
     void GridCheck()
@@ -125,6 +125,6 @@ public class ColorLinkTask : MonoBehaviour
     public void ResetButton()
     {
         points = 0;
-        GameEventsManager.instance.miscEvents.OnResetColor();
+        GameEventsManager.instance.colorLinkEvents.OnResetColor();
     }
 }
