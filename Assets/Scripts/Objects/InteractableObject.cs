@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+    private bool taskStart = false;
     public Tasks task;
     private GameObject instantiatedTask;
 
+    void Start()
+    {
+        GameEventsManager.instance.playerEvents.onActionChange += FinishTask;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.playerEvents.onActionChange -= FinishTask;
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.O))
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.O) && taskStart == false)
         {
             if (task != null)
             {
@@ -33,5 +44,10 @@ public class InteractableObject : MonoBehaviour
         {
             Debug.LogWarning($"The task {task.taskName} has no prefab.");
         }
+    }
+
+    private void FinishTask()
+    {
+        taskStart = !taskStart;
     }
 }
