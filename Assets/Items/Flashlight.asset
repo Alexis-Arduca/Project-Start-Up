@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Flashlight
   m_EditorClassIdentifier: 
   itemName: Flashlight
-  isEquipped: 0
+  isEquipped: 1
   slotIndex: 1
   itemImage: {fileID: 2800000, guid: 4f78e2d739d709b479f6400bc1a243d0, type: 3}
