@@ -10,5 +10,8 @@ public class Flashlight : Item
     public override void Use()
     {
         Debug.Log("Using Flashlight");
+        GameObject flashlight = GameEventsManager.instance.spotLight;
+
+        flashlight.SetActive(!flashlight.activeSelf);
     }
 }

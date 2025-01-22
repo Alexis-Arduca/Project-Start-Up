@@ -7,7 +7,6 @@ public class PlayerItem : MonoBehaviour
     private GameEventsManager gameEventsManager;
     private Inventory inventory;
 
-
     // Start is called before the first frame update
     void Start()
     {

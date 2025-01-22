@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {
-    public float mouseSensitivity = 300f;
+    private bool playerAction = false;
+    public float mouseSensitivity = 500f;
     public Transform playerBody;
     public PlayerMovement playerMovement;
 
@@ -12,6 +13,8 @@ public class CameraZoom : MonoBehaviour
 
     void Start()
     {
+        GameEventsManager.instance.playerEvents.onActionChange += ChangeAction;
+
         Cursor.lockState = CursorLockMode.Locked;
 
         if (playerMovement == null && playerBody != null)
@@ -24,24 +27,44 @@ public class CameraZoom : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        GameEventsManager.instance.playerEvents.onActionChange -= ChangeAction;
+    }
+
+    private void ChangeAction()
+    {
+        playerAction = !playerAction;
+
+        if (playerAction == true) {
+            Cursor.lockState = CursorLockMode.None;
+        } else {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        
+    }
+
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (!playerAction) {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
 
-        if (playerMovement != null)
-        {
-            playerMovement.HandleMovement(transform);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerMovement does not exist !");
+            if (playerMovement != null)
+            {
+                playerMovement.HandleMovement(transform);
+            }
+            else
+            {
+                Debug.LogWarning("PlayerMovement does not exist !");
+            }
         }
     }
 }
