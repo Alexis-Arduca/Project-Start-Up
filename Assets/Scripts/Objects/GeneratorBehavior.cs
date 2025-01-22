@@ -7,7 +7,9 @@ using Yarn.Unity;
 
 public class GeneratorBehavior : MonoBehaviour
 {
-    private bool isOn = true;
+    public static bool isOn = true;
+    
+    public GameObject dialogueSystem;
 
     public GameObject radio;
 
@@ -18,12 +20,12 @@ public class GeneratorBehavior : MonoBehaviour
             isOn = !isOn;
             if (isOn)
             {
-                FindObjectOfType<DialogueRunner>().StartDialogue("GeneratorOn");
+                dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOn");
                 TurnOnRadio();
             }
             else
             {
-                FindObjectOfType<DialogueRunner>().StartDialogue("GeneratorOff");
+                dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOff");
                 TurnOffRadio();
             }
         }
@@ -31,17 +33,16 @@ public class GeneratorBehavior : MonoBehaviour
     
     private void TurnOnRadio()
     {
-        radio.SetActive(true);
         radio.GetComponent<AudioSource>().Stop();
     }
     
     private void TurnOffRadio()
     {
-        radio.SetActive(false);
+        radio.GetComponent<AudioSource>().Stop();
     }
     
     private void OnCollisionExit(Collision other)
     {
-        FindObjectOfType<DialogueRunner>().Stop();
+        dialogueSystem.GetComponent<DialogueRunner>().Stop();
     }
 }

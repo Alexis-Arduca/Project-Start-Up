@@ -9,6 +9,7 @@ public class StartDialogue : MonoBehaviour
 {
     public AudioSource radioAudioSource;
     public AudioClip radioAnswer;
+    public GameObject dialogueSystem;
     
     private void OnCollisionEnter(Collision other)
     {
@@ -17,13 +18,39 @@ public class StartDialogue : MonoBehaviour
             radioAudioSource.Stop();
             radioAudioSource.clip = radioAnswer;
             radioAudioSource.Play();
-            FindObjectOfType<DialogueRunner>().StartDialogue("Start");
+            if (GeneratorBehavior.isOn)
+            {
+                RadioOn();
+            }
+            else
+            {
+                RadioOff();
+            }
         }
+    }
+    
+    private void RadioOn()
+    {
+        if (!dialogueSystem.GetComponent<DialogueRunner>().IsDialogueRunning)
+        {
+            dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("Demo");
+        }
+        else
+        {
+            dialogueSystem.GetComponentInChildren<Canvas>().enabled = true;
+        }
+    }
+    
+    private void RadioOff()
+    {
+        radioAudioSource.Stop();
+        dialogueSystem.GetComponent<DialogueRunner>().Stop();
+        dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
     }
 
     private void OnCollisionExit(Collision other)
     {
         radioAudioSource.Stop();
-        FindObjectOfType<DialogueRunner>().Stop();
+        dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
     }
 }
