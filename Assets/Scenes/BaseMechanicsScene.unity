@@ -140,17 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLanguageCode: en-GB
---- !u!114 &329232160 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
-  m_PrefabInstance: {fileID: 1289452693}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329232154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &376703382
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +189,7 @@ GameObject:
   - component: {fileID: 437686924}
   m_Layer: 0
   m_Name: PinpointPosition
-  m_TagString: Untagged
+  m_TagString: Pinpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,8 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68875920917c2594299502769c2b7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToAppear: {fileID: 437686919}
-  dialogueRunner: {fileID: 329232160}
 --- !u!1 &976631792
 GameObject:
   m_ObjectHideFlags: 0
