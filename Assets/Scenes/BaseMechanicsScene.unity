@@ -804,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: lineProvider
       value: 
-      objectReference: {fileID: 329232158}
+      objectReference: {fileID: 0}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: startAutomatically
       value: 0
@@ -1016,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: lineProvider
       value: 
-      objectReference: {fileID: 329232158}
+      objectReference: {fileID: 0}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: startAutomatically
       value: 0
