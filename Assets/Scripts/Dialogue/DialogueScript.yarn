@@ -6,23 +6,25 @@ Not-So-Observant Person: Oh, thank goodness! I need help—there’s smoke every
 
 Operator: Alright, stay calm. I’m here to help. Where are you right now? Do you see anything around you that can tell me your location?
 
+Not-So-Observant Person: I am calling from the emergency terminal of the Orange House.
+
 <<appear>>
 
-Not-So-Observant Person: There’s this big rock formation—it looks like a horseshoe. And there’s a fallen tree nearby. I think I’m near the south ridge.
+Operator: Understood. Listen carefully: the safe zone is the shelter in the South East. It’s about 162 kilometers from you. Can you see the sun from where you are?
 
-Operator: Understood. You’re close to the Horseshoe Rock Trail. Listen carefully: the nearest safe zone is the East Shelter. It’s about 1 kilometer from you. Can you see the sun from where you are?
+Not-So-Observant Person: Yes, it’s just to my right.
 
-Not-So-Observant Person: Yes, it’s just to my left.
+Operator: Good. Start walking straight ahead. You should see the Green House on your left. Follow it, and look for red flags marking the way to the shelter. Got it?
 
-Operator: Good. Face the sun and start walking downhill. There’s a dirt path at the base of the slope. Follow it, and look for red flags marking the way to the shelter. Got it?
-
-Not-So-Observant Person: Face the sun, go downhill, find the dirt path, and follow the red flags. Got it. Is the fire close?
+Not-So-Observant Person: Straight ahead, Green House on my left, find and follow the red flags. Got it. Is the fire close?
 
 Operator: It’s moving, but you’ve got time if you move steadily. Keep low if the smoke gets thicker, and cover your mouth with a cloth if you can. Do you have water?
 
 Not-So-Observant Person: Yes, I’ve got some in my pack.
 
 Operator: Good. Stay hydrated with small sips. I’ll stay on this channel to guide you. Let me know the moment you see the path or if anything changes. You’re not alone in this.
+
+<<wait 10>>
 
 Not-So-Observant Person: I think I see the path! Heading there now. Thank you so much!
 
