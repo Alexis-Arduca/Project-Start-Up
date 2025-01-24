@@ -198,16 +198,16 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 11
+    m_Value: 9.1
   multiplier:
     m_OverrideState: 0
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 0.4660715
+    m_Value: 1.5087135
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.18750614, y: 0.29181972, z: 0.5}
+    m_Value: {x: 0.5, y: 0.3723494, z: 0.39036497}
   desiredLuxValue:
     m_OverrideState: 0
     m_Value: 20000
@@ -222,7 +222,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 8253d41e6e8b11a4cbe77a4f8f82934d, type: 3}
+    m_Value: {fileID: 8900000, guid: 481d30bab5d541f44a2b5019a0e122d4, type: 3}
   distortionMode:
     m_OverrideState: 0
     m_Value: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   meteringMode:
     m_OverrideState: 0
     m_Value: 2
@@ -401,8 +401,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   compensation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 3.32
   limitMin:
     m_OverrideState: 0
     m_Value: -10
@@ -640,7 +640,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 4
   useFullACES:
     m_OverrideState: 0
     m_Value: 0
@@ -663,8 +663,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   lutTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 11700000, guid: 5adb7b3394f4ec92698f2a82aeae0fc0, type: 3}
   lutContribution:
     m_OverrideState: 0
     m_Value: 1
