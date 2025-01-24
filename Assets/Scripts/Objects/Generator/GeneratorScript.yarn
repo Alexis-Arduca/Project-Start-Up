@@ -1,8 +1,8 @@
 ﻿title: GeneratorOn
 ---
-The generator is on.
+The generator is currently on with {printFuelLevel()}% fuel.
 ===
 title: GeneratorOff
 ---
-The generator is off.
+The generator is currently off with {printFuelLevel()}% fuel.
 ===

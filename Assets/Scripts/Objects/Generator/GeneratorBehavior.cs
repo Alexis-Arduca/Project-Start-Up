@@ -10,8 +10,20 @@ public class GeneratorBehavior : MonoBehaviour
     public static bool isOn = true;
     
     public GameObject dialogueSystem;
+    
+    [YarnFunction("printFuelLevel")]
+    public static int PrintFuelLevel()
+    {
+        return FuelConsumption.fuelLevel;
+    }
 
-    public GameObject radio;
+    private void Update()
+    {
+        if (isOn && FuelConsumption.fuelLevel <= 0)
+        {
+            isOn = false;
+        }
+    }
 
     private void OnCollisionEnter(Collision other)
     {
