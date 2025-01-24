@@ -21,24 +21,12 @@ public class GeneratorBehavior : MonoBehaviour
             if (isOn)
             {
                 dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOn");
-                TurnOnRadio();
             }
             else
             {
                 dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOff");
-                TurnOffRadio();
             }
         }
-    }
-    
-    private void TurnOnRadio()
-    {
-        radio.GetComponent<AudioSource>().Stop();
-    }
-    
-    private void TurnOffRadio()
-    {
-        radio.GetComponent<AudioSource>().Stop();
     }
     
     private void OnCollisionExit(Collision other)

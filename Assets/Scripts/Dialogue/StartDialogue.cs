@@ -37,6 +37,7 @@ public class StartDialogue : MonoBehaviour
         }
         else
         {
+            Debug.Log("Resume dialogue");
             dialogueSystem.GetComponentInChildren<Canvas>().enabled = true;
         }
     }
@@ -44,7 +45,6 @@ public class StartDialogue : MonoBehaviour
     private void RadioOff()
     {
         radioAudioSource.Stop();
-        dialogueSystem.GetComponent<DialogueRunner>().Stop();
         dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
     }
 
