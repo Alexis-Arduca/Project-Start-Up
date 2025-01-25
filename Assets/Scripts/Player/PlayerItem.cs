@@ -33,10 +33,6 @@ public class PlayerItem : MonoBehaviour
             {
                 equippedItem.Use();
             }
-            else
-            {
-                Debug.Log("No item equipped.");
-            }
         }
     }
 }
