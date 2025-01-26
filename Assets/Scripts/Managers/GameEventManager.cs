@@ -11,6 +11,7 @@ public class GameEventsManager : MonoBehaviour
     public GameObject ColorLink;
     public GameObject GridContainer;
     public GameObject spotLight;
+    public GameObject tileGame;
     public Inventory inventory;
 
     /* Temp */
