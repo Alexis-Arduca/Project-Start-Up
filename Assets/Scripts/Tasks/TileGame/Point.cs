@@ -27,13 +27,21 @@ public class Point : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log($"Point clicked: {gameObject.name}");
-        if (selectedPoint == null)
+
+        if (eventData.button == PointerEventData.InputButton.Left) // Clic gauche
         {
-            SelectPoint();
+            if (selectedPoint == null)
+            {
+                SelectPoint();
+            }
+            else if (selectedPoint == this)
+            {
+                DeselectPoint();
+            }
         }
-        else if (selectedPoint == this)
+        else if (eventData.button == PointerEventData.InputButton.Right) // Clic droit
         {
-            DeselectPoint();
+            RotateClockwise();
         }
     }
 
@@ -53,7 +61,6 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
     public void MoveToTile(Tile targetTile)
     {
-
         if (targetTile.IsOccupied())
         {
             Debug.Log("Tile is already occupied!");
@@ -108,5 +115,12 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
             currentTile = nextTile;
         }
+    }
+
+    void RotateClockwise()
+    {
+        // Rotation horaire des directions actives
+        activeDirections = (Directions)(((int)activeDirections << 1) | ((int)activeDirections >> 3)) & (Directions.Left | Directions.Right | Directions.Up | Directions.Down);
+        Debug.Log($"Rotated point {gameObject.name} to new directions: {activeDirections}");
     }
 }
