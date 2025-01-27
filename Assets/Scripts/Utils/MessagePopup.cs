@@ -25,9 +25,7 @@ public class MessagePopup : MonoBehaviour
 
     private void HidePopUp()
     {
-        Debug.Log("Enter Here: " + popUpShow);
         popUpShow = !popUpShow;
-        Debug.Log("2: " + popUpShow);
     }
 
     void OnTriggerStay(Collider other)

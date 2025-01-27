@@ -18,17 +18,25 @@ public class Point : MonoBehaviour, IPointerClickHandler
     public static Point selectedPoint = null;
     public Directions activeDirections;
     private RectTransform rectTransform;
+    private bool placedPoint = false;
+    private Vector3 basePosition;
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        basePosition = gameObject.transform.position;
+
+        GameEventsManager.instance.tileGameEvents.onResetGame += ResetPoint;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.tileGameEvents.onResetGame -= ResetPoint;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"Point clicked: {gameObject.name}");
-
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left  && placedPoint == false)
         {
             if (selectedPoint == null)
             {
@@ -39,7 +47,7 @@ public class Point : MonoBehaviour, IPointerClickHandler
                 DeselectPoint();
             }
         }
-        else if (eventData.button == PointerEventData.InputButton.Right)
+        else if (eventData.button == PointerEventData.InputButton.Right && placedPoint == false)
         {
             RotateClockwise();
             this.gameObject.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
@@ -48,14 +56,12 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
     void SelectPoint()
     {
-        Debug.Log($"Point selected: {gameObject.name}");
         selectedPoint = this;
         GetComponent<RawImage>().color = Color.green;
     }
 
     void DeselectPoint()
     {
-        Debug.Log($"Point deselected: {gameObject.name}");
         selectedPoint = null;
         GetComponent<RawImage>().color = Color.white;
     }
@@ -69,7 +75,8 @@ public class Point : MonoBehaviour, IPointerClickHandler
         }
 
         rectTransform.position = targetTile.GetComponent<RectTransform>().position;
-
+        placedPoint = true;
+    
         IlluminateTiles(targetTile);
 
         DeselectPoint();
@@ -77,8 +84,6 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
     void IlluminateTiles(Tile startingTile)
     {
-        Debug.Log($"Illuminating tiles from starting tile: {startingTile.gameObject.name}");
-
         if (activeDirections.HasFlag(Directions.Up))
             IlluminateDirection(startingTile, Vector2.up);
         if (activeDirections.HasFlag(Directions.Down))
@@ -91,7 +96,6 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
     void IlluminateDirection(Tile startingTile, Vector2 direction)
     {
-        Debug.Log($"Illuminating in direction {direction} from Tile {startingTile.gameObject.name}");
         Tile currentTile = startingTile;
 
         while (true)
@@ -100,7 +104,6 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
             if (nextTile == null)
             {
-                Debug.Log("No more tiles in this direction.");
                 break;
             }
 
@@ -111,7 +114,6 @@ public class Point : MonoBehaviour, IPointerClickHandler
             else
             {
                 nextTile.Illuminate();
-                Debug.Log($"Tile illuminated: {nextTile.gameObject.name}");
             }
 
             currentTile = nextTile;
@@ -121,6 +123,11 @@ public class Point : MonoBehaviour, IPointerClickHandler
     void RotateClockwise()
     {
         activeDirections = (Directions)(((int)activeDirections << 1) | ((int)activeDirections >> 3)) & (Directions.Left | Directions.Up | Directions.Right | Directions.Down);
-        Debug.Log($"Rotated point {gameObject.name} to new directions: {activeDirections}");
+    }
+
+    void ResetPoint()
+    {
+        gameObject.transform.position = basePosition;
+        placedPoint = false;
     }
 }

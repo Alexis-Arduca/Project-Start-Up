@@ -7,6 +7,7 @@ public class GameEventsManager : MonoBehaviour
 
     public ColorLinkEvents colorLinkEvents;
     public PlayerEvents playerEvents;
+    public TileGameEvents tileGameEvents;
 
     public GameObject ColorLink;
     public GameObject GridContainer;
@@ -34,6 +35,7 @@ public class GameEventsManager : MonoBehaviour
         // initialize all events
         colorLinkEvents = new ColorLinkEvents();
         playerEvents = new PlayerEvents();
+        tileGameEvents = new TileGameEvents();
     }
 
     public Inventory GetInventory()
