@@ -13,18 +13,11 @@ public class Tasks : ScriptableObject
 
     [Header("Mini-Game Settings")]
     public GameObject taskPrefab;
-    public float timeLimit = 0f;
-    public int score;
     public bool isCompleted;
-
-    [Header("Rewards")]
-    public int rewardPoints;
-    public string rewardItem;
 
     public void InitializeTask()
     {
         isCompleted = false;
-        score = 0;
         Debug.Log($"Task {taskName} initialized.");
     }
 
@@ -40,6 +33,6 @@ public class Tasks : ScriptableObject
     public void CompleteTask()
     {
         isCompleted = true;
-        Debug.Log($"Task {taskName} completed! Reward: {rewardPoints} points, Item: {rewardItem}");
+        Debug.Log($"Task {taskName} completed!");
     }
 }

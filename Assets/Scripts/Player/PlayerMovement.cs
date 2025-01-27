@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     private Vector3 movement;
     private Rigidbody rb;
+    private bool isRuning = false;
 
     void Start()
     {
@@ -15,6 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMovement(Transform cameraTransform)
     {
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            isRuning = true;
+            moveSpeed = 10;
+        } else if (isRuning = true) {
+            isRuning = false;
+            moveSpeed = 5;
+        }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 

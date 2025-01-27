@@ -22,7 +22,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
     public void SetOccupied(bool occupied)
     {
         isOccupied = occupied;
-        rawImage.color = occupied ? Color.red : Color.white;
+        rawImage.color = occupied ? Color.cyan : Color.white;
         Debug.Log($"Tile {gameObject.name} set to {(occupied ? "occupied" : "unoccupied")}.");
     }
 

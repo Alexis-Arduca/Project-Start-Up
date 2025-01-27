@@ -28,7 +28,7 @@ public class Point : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log($"Point clicked: {gameObject.name}");
 
-        if (eventData.button == PointerEventData.InputButton.Left) // Clic gauche
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             if (selectedPoint == null)
             {
@@ -39,7 +39,7 @@ public class Point : MonoBehaviour, IPointerClickHandler
                 DeselectPoint();
             }
         }
-        else if (eventData.button == PointerEventData.InputButton.Right) // Clic droit
+        else if (eventData.button == PointerEventData.InputButton.Right)
         {
             RotateClockwise();
             this.gameObject.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class LeavingPost : MonoBehaviour
 {
     private GameObject blackPanel;
-    private GameObject quitButton;
     private GameObject homeButton;
     private Image panelImage;
     private bool isFading = false;
@@ -20,9 +19,6 @@ public class LeavingPost : MonoBehaviour
         if (canvas != null)
         {
             Transform panelTransform = canvas.transform.Find("BlackPanel");
-            quitButton = GameObject.Find("Buttons").gameObject;
-
-            quitButton.SetActive(false);
 
             if (panelTransform != null)
             {
