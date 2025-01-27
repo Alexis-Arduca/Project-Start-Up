@@ -71,6 +71,7 @@ public class ColorLinkTask : MonoBehaviour
                 Debug.Log("Won");
                 container.SetActive(false);
                 GameEventsManager.instance.playerEvents.OnActionChange();
+                Destroy(this.gameObject);
             }
         }
     }
