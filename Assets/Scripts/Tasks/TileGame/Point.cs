@@ -8,9 +8,9 @@ public enum Directions
 {
     None = 0,
     Up = 1,
-    Down = 2,
-    Left = 4,
-    Right = 8
+    Right = 2,
+    Down = 4,
+    Left = 8
 }
 
 public class Point : MonoBehaviour, IPointerClickHandler
@@ -42,6 +42,7 @@ public class Point : MonoBehaviour, IPointerClickHandler
         else if (eventData.button == PointerEventData.InputButton.Right) // Clic droit
         {
             RotateClockwise();
+            this.gameObject.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
         }
     }
 
@@ -119,8 +120,7 @@ public class Point : MonoBehaviour, IPointerClickHandler
 
     void RotateClockwise()
     {
-        // Rotation horaire des directions actives
-        activeDirections = (Directions)(((int)activeDirections << 1) | ((int)activeDirections >> 3)) & (Directions.Left | Directions.Right | Directions.Up | Directions.Down);
+        activeDirections = (Directions)(((int)activeDirections << 1) | ((int)activeDirections >> 3)) & (Directions.Left | Directions.Up | Directions.Right | Directions.Down);
         Debug.Log($"Rotated point {gameObject.name} to new directions: {activeDirections}");
     }
 }
