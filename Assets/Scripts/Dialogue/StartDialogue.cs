@@ -7,17 +7,12 @@ using Yarn.Unity.Editor;
 
 public class StartDialogue : MonoBehaviour
 {
-    public AudioSource radioAudioSource;
-    public AudioClip radioAnswer;
     public GameObject dialogueSystem;
     
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            radioAudioSource.Stop();
-            radioAudioSource.clip = radioAnswer;
-            radioAudioSource.Play();
             if (GeneratorBehavior.isOn)
             {
                 RadioOn();
@@ -44,13 +39,11 @@ public class StartDialogue : MonoBehaviour
     
     private void RadioOff()
     {
-        radioAudioSource.Stop();
         dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
     }
 
     private void OnCollisionExit(Collision other)
     {
-        radioAudioSource.Stop();
         dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
     }
 }

@@ -7,10 +7,11 @@ using Yarn.Unity;
 
 public class GeneratorBehavior : MonoBehaviour
 {
-    public static bool isOn = true;
+    public static bool isOn;
     
+    private Coroutine fuelConsumptionCoroutine;
     public GameObject dialogueSystem;
-    
+
     [YarnFunction("printFuelLevel")]
     public static int PrintFuelLevel()
     {
@@ -19,9 +20,20 @@ public class GeneratorBehavior : MonoBehaviour
 
     private void Update()
     {
+        // Check if the generator is on while the fuel level is 0
         if (isOn && FuelConsumption.fuelLevel <= 0)
         {
             isOn = false;
+        }
+        
+        if (isOn && fuelConsumptionCoroutine == null)
+        {
+            fuelConsumptionCoroutine = StartCoroutine(FuelConsumption.ConsumeFuel());
+        }
+        else if (!isOn && fuelConsumptionCoroutine != null)
+        {
+            StopCoroutine(fuelConsumptionCoroutine);
+            fuelConsumptionCoroutine = null;
         }
     }
 
