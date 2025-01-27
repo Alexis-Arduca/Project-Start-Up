@@ -12,6 +12,12 @@ public class Tile : MonoBehaviour, IPointerClickHandler
     {
         rawImage = GetComponent<RawImage>();
         ResetColor();
+        GameEventsManager.instance.tileGameEvents.onResetGame += ResetTile;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.tileGameEvents.onResetGame -= ResetTile;
     }
 
     public bool IsOccupied()
@@ -23,7 +29,6 @@ public class Tile : MonoBehaviour, IPointerClickHandler
     {
         isOccupied = occupied;
         rawImage.color = occupied ? Color.cyan : Color.white;
-        Debug.Log($"Tile {gameObject.name} set to {(occupied ? "occupied" : "unoccupied")}.");
     }
 
     public void Illuminate()
@@ -44,23 +49,17 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"Tile clicked: {gameObject.name}");
-
         if (Point.selectedPoint != null && !isOccupied)
         {
-            Debug.Log($"Placing Point {Point.selectedPoint.gameObject.name} on Tile {gameObject.name}");
             Point.selectedPoint.MoveToTile(this);
             SetOccupied(true);
         }
     }
 
-
     public Tile GetNeighborTile(Vector2 direction)
     {
         RectTransform rectTransform = GetComponent<RectTransform>();
         Vector3 neighborPosition = rectTransform.position + new Vector3(direction.x, direction.y) * rectTransform.rect.width;
-
-        Debug.Log($"Searching for neighbor in direction {direction} from {gameObject.name}. Expected position: {neighborPosition}");
 
         Tile closestTile = null;
         float closestDistance = float.MaxValue;
@@ -77,10 +76,15 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 
         if (closestTile != null)
             Debug.Log($"Neighbor found: {closestTile.gameObject.name}");
-        else
-            Debug.Log("No neighbor tile found!");
 
         return closestTile;
+    }
+
+    public void ResetTile()
+    {
+        isOccupied = false;
+        isIlluminated = false;
+        rawImage.color = Color.white;
     }
 }
     

@@ -35,4 +35,9 @@ public class TileGameManager : MonoBehaviour
 
         return true;
     }
+
+    public void ResetButton()
+    {
+        GameEventsManager.instance.tileGameEvents.OnResetGame();
+    }
 }
