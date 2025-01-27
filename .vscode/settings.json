@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Project-Start-Up.sln"
+    "Project-Start-Up.sln=======dotnet.defaultSolution": "Start-up Pb2.sln>>>>>>>Stashedchanges",
+    "dotnet.defaultSolution": "Start-up Pb2.sln"
 }
