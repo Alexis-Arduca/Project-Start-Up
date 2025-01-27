@@ -4,22 +4,16 @@ using Yarn.Unity;
 
 public class DialogueCompleteHandler : MonoBehaviour
 {
-    public GameObject objectToAppear;
-
-    public DialogueRunner dialogueRunner;
+    public static GameObject objectToAppear;
 
     private void Start()
     {
-        if (dialogueRunner != null)
-        {
-            dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
-        }
-
-        // Initially hide the GameObject
+        objectToAppear = GameObject.FindGameObjectWithTag("Pinpoint");
         objectToAppear.SetActive(false);
     }
-
-    private void OnDialogueComplete()
+    
+    [YarnCommand("appear")]
+    public static void Appear()
     {
         // Make the GameObject appear
         objectToAppear.SetActive(true);
@@ -30,14 +24,6 @@ public class DialogueCompleteHandler : MonoBehaviour
         if (objectToAppear.activeSelf)
         {
             objectToAppear.SetActive(false);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (dialogueRunner != null)
-        {
-            dialogueRunner.onDialogueComplete.RemoveListener(OnDialogueComplete);
         }
     }
 }
