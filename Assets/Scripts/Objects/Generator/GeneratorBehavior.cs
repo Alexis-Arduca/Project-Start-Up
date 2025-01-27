@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Yarn.Unity;
@@ -9,6 +10,7 @@ public class GeneratorBehavior : MonoBehaviour
 {
     public static bool isOn;
     
+    private bool switchGenerator;
     private Coroutine fuelConsumptionCoroutine;
     public GameObject dialogueSystem;
 
@@ -42,15 +44,37 @@ public class GeneratorBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isOn = !isOn;
-            if (isOn)
+            switch (isOn)
             {
-                dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOn");
-            }
-            else
-            {
-                dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOff");
+                case true:
+                    dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOn");
+                    break;
+                case false:
+                    dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOff");
+                    break;
             }
         }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                ResetFuelLevel(); 
+            }
+        }
+    }
+
+    private void ResetFuelLevel()
+    {
+        if (!isOn)
+        {
+            Debug.Log("Fuel level reset");
+            FuelConsumption.fuelLevel = 100;
+        }
+
     }
     
     private void OnCollisionExit(Collision other)
