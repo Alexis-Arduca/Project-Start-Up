@@ -1,13 +1,24 @@
 using UnityEngine;
 using Yarn.Unity;
 
+[RequireComponent(typeof(AudioSource))]
 public class GeneratorBehavior : MonoBehaviour
 {
-    public static bool isOn;
-    
     private Coroutine fuelConsumptionCoroutine;
-    public DialogueRunner dialogueRunner;
+    private AudioSource audioSource;
 
+    public static bool isOn;
+    public DialogueRunner dialogueRunner;
+    
+    [Header("Audio")]
+    public AudioClip generatorSwitchSound;
+    public AudioClip generatorDownSound;
+    
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    
     [YarnFunction("printFuelLevel")]
     public static int PrintFuelLevel()
     {
@@ -20,14 +31,17 @@ public class GeneratorBehavior : MonoBehaviour
         if (isOn && FuelConsumption.fuelLevel <= 0)
         {
             isOn = false;
+            audioSource.PlayOneShot(generatorDownSound);
         }
         
         if (isOn && fuelConsumptionCoroutine == null)
         {
+            audioSource.PlayOneShot(generatorSwitchSound);
             fuelConsumptionCoroutine = StartCoroutine(FuelConsumption.ConsumeFuel());
         }
         else if (!isOn && fuelConsumptionCoroutine != null)
         {
+            audioSource.PlayOneShot(generatorSwitchSound);
             StopCoroutine(fuelConsumptionCoroutine);
             fuelConsumptionCoroutine = null;
         }
@@ -37,7 +51,11 @@ public class GeneratorBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            isOn = !isOn;
+            if (FuelConsumption.fuelLevel > 0)
+            {
+                isOn = !isOn;
+            }
+
             switch (isOn && FuelConsumption.fuelLevel > 0)
             {
                 case true:
