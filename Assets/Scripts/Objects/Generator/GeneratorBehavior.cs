@@ -38,7 +38,7 @@ public class GeneratorBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isOn = !isOn;
-            switch (isOn)
+            switch (isOn && FuelConsumption.fuelLevel > 0)
             {
                 case true:
                     dialogueRunner.StartDialogue("GeneratorOn");
