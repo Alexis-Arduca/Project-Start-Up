@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!223 &235772980 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1289452693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329232154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
@@ -140,6 +145,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLanguageCode: en-US
+--- !u!114 &329232160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1289452693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329232154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376703382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981c5b15ca18a304e8d93ab777dbc6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSystem: {fileID: 2033136001}
+  dialogueRunner: {fileID: 2033136007}
 --- !u!114 &1755442798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,7 +1602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1786149617fc6b641a226506ffcc4fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSystem: {fileID: 329232154}
+  dialogueRunner: {fileID: 329232160}
+  dialogueCanvas: {fileID: 235772980}
 --- !u!1 &1868238013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1822,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLanguageCode: en-US
+--- !u!114 &2033136007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1184088752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033136001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
