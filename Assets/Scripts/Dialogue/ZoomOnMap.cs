@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoomOnMap : MonoBehaviour
@@ -18,7 +15,7 @@ public class ZoomOnMap : MonoBehaviour
 
     private float cameraSpeed;
     
-    private bool zoomed = false;
+    private bool zoomed;
     
     private void Start()
     {

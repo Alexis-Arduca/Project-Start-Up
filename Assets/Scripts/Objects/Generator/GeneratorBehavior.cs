@@ -1,18 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Yarn.Unity;
 
 public class GeneratorBehavior : MonoBehaviour
 {
     public static bool isOn;
     
-    private bool switchGenerator;
     private Coroutine fuelConsumptionCoroutine;
-    public GameObject dialogueSystem;
+    public DialogueRunner dialogueRunner;
 
     [YarnFunction("printFuelLevel")]
     public static int PrintFuelLevel()
@@ -47,10 +41,10 @@ public class GeneratorBehavior : MonoBehaviour
             switch (isOn)
             {
                 case true:
-                    dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOn");
+                    dialogueRunner.StartDialogue("GeneratorOn");
                     break;
                 case false:
-                    dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("GeneratorOff");
+                    dialogueRunner.StartDialogue("GeneratorOff");
                     break;
             }
         }
@@ -79,6 +73,6 @@ public class GeneratorBehavior : MonoBehaviour
     
     private void OnCollisionExit(Collision other)
     {
-        dialogueSystem.GetComponent<DialogueRunner>().Stop();
+        dialogueRunner.Stop();
     }
 }

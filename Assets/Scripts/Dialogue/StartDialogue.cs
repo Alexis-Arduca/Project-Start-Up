@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-using Yarn.Unity.Editor;
 
 public class StartDialogue : MonoBehaviour
 {
-    public GameObject dialogueSystem;
+    public DialogueRunner dialogueRunner;
+    public Canvas dialogueCanvas;
     
     private void OnCollisionEnter(Collision other)
     {
@@ -26,24 +23,24 @@ public class StartDialogue : MonoBehaviour
     
     private void RadioOn()
     {
-        if (!dialogueSystem.GetComponent<DialogueRunner>().IsDialogueRunning)
+        if (!dialogueRunner.IsDialogueRunning)
         {
-            dialogueSystem.GetComponent<DialogueRunner>().StartDialogue("Demo");
+            dialogueRunner.StartDialogue("Demo");
         }
         else
         {
             Debug.Log("Resume dialogue");
-            dialogueSystem.GetComponentInChildren<Canvas>().enabled = true;
+            dialogueCanvas.enabled = true;
         }
     }
     
     private void RadioOff()
     {
-        dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
+        dialogueCanvas.enabled = false;
     }
 
     private void OnCollisionExit(Collision other)
     {
-        dialogueSystem.GetComponentInChildren<Canvas>().enabled = false;
+        dialogueCanvas.enabled = false;
     }
 }
