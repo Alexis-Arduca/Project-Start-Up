@@ -1444,6 +1444,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981c5b15ca18a304e8d93ab777dbc6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generatorMaterial:
+  - {fileID: 2100000, guid: 5e1a8789b60ded444924186b702d4232, type: 2}
+  - {fileID: 2100000, guid: 107dc958ed22293429649c1df6761d15, type: 2}
+  - {fileID: 2100000, guid: fa529aa23a6456443a9cce5d3d3e4edb, type: 2}
   dialogueRunner: {fileID: 2033136007}
   generatorSwitchSound: {fileID: 8300000, guid: 37bdf9ee6da7c184584d795bb02037c8, type: 3}
   generatorDownSound: {fileID: 8300000, guid: 7f7de87722ff1184bbfafde309720ae0, type: 3}
