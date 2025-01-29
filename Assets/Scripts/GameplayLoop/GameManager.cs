@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
     private void GameLoop()
     {
         // Game Loop here
+        // The goal in my view is to have some random events at some moment in the game (like fnaf). When a event occur is highlighted
+        // / marked and we have to fix it
     }
 
     GameObject GetRandomGameObject()
