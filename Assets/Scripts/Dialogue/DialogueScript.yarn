@@ -1,0 +1,38 @@
+﻿title: Demo
+---
+Operator: Polar Bear Tower here. I’m receiving your call. Who’s there?
+
+Not-So-Observant Person: Oh, thank goodness! I need help—there’s smoke everywhere, and I think the fire is closing in!
+
+Operator: Alright, stay calm. I’m here to help. Where are you right now? Do you see anything around you that can tell me your location?
+
+Not-So-Observant Person: I am calling from the emergency terminal of the Orange House.
+
+<<appear>>
+
+Operator: Understood. Listen carefully: the safe zone is the shelter in the South East. It’s about 162 kilometers from you. Can you see the sun from where you are?
+
+Not-So-Observant Person: Yes, it’s just to my right.
+
+Operator: Good. Start walking straight ahead. You should see the Green House on your left. Follow it, and look for red flags marking the way to the shelter. Got it?
+
+Not-So-Observant Person: Straight ahead, Green House on my left, find and follow the red flags. Got it. Is the fire close?
+
+Operator: It’s moving, but you’ve got time if you move steadily. Keep low if the smoke gets thicker, and cover your mouth with a cloth if you can. Do you have water?
+
+Not-So-Observant Person: Yes, I’ve got some in my pack.
+
+Operator: Good. Stay hydrated with small sips. I’ll stay on this channel to guide you. Let me know the moment you see the path or if anything changes. You’re not alone in this.
+
+<<wait 10>>
+
+Not-So-Observant Person: I think I see the path! Heading there now. Thank you so much!
+
+Operator: You’re doing great. Keep following the red flags, and you’ll reach the shelter soon. I’ll notify them to expect you. Stay safe.
+
+Not-So-Observant Person: I will. Thank you!
+===
+title: GeneratorCheck
+---
+I should go check the generator.
+===
