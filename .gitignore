@@ -88,3 +88,6 @@ crashlytics-build.properties
 # I f the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
 fmod_editor.log
+
+# Yarn-Spinner package
+YarnSpinner-Unity-main
