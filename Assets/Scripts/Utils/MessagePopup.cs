@@ -8,24 +8,25 @@ public class MessagePopup : MonoBehaviour
     public string popUpMessage;
     private GameObject objectPopUp;
     private TMPro.TMP_Text messagePopUp;
-    private bool popUpShow = true;
+    public bool popUpShow;
 
     // Start is called before the first frame update
     void Start()
     {
+        popUpShow = false;
         objectPopUp = GameObject.Find("MessagePopUp");
         messagePopUp = objectPopUp.GetComponent<TMP_Text>();
-        GameEventsManager.instance.playerEvents.onActionChange += HidePopUp;
+        // GameEventsManager.instance.playerEvents.onActionChange += HidePopUp;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.playerEvents.onActionChange -= HidePopUp;
+        // GameEventsManager.instance.playerEvents.onActionChange -= HidePopUp;
     }
 
-    private void HidePopUp()
+    public void PopUpState(bool state)
     {
-        popUpShow = !popUpShow;
+        popUpShow = state;
     }
 
     void OnTriggerStay(Collider other)

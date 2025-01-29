@@ -16,7 +16,7 @@ public class TileGameManager : MonoBehaviour
         {
             Debug.Log("You won! All tiles are occupied or illuminated.");
             tileGame.SetActive(false);
-            GameEventsManager.instance.playerEvents.OnActionChange();
+            GameEventsManager.instance.gameLoopEvents.OnColorTileEnd();
             Destroy(gameObject);
         }
     }

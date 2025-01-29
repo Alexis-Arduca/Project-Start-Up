@@ -57,7 +57,6 @@ public class ColorLinkTask : MonoBehaviour
                 {
                     if (gridArray[i, j].GetComponent<ColorLink>().GetIsBaseColor() == true && !visited[i, j])
                     {
-                        Debug.Log("Loop1");
                         if (GridCheckRec(i, j, gridArray, visited))
                         {
                             points += 1;
@@ -65,12 +64,11 @@ public class ColorLinkTask : MonoBehaviour
                     }
                 }
             }
-            Debug.Log("My Points: " + points);
 
             if (points == 4) {
                 Debug.Log("Won");
                 container.SetActive(false);
-                GameEventsManager.instance.playerEvents.OnActionChange();
+                GameEventsManager.instance.gameLoopEvents.OnColorLinkEnd();
                 Destroy(this.gameObject);
             }
         }
@@ -102,7 +100,6 @@ public class ColorLinkTask : MonoBehaviour
                 {
                     if (newImage.GetIsBaseColor() == true)
                     {
-                        Debug.Log("Connection Create !");
                         return true;
                     }
 
