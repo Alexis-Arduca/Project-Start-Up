@@ -7,6 +7,7 @@ TagManager:
   - Pinpoint
   - ColorLink
   - GridContainer
+  - WaypointTag
   layers:
   - Default
   - TransparentFX
