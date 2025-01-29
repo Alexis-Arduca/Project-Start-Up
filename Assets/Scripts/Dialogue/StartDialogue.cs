@@ -5,15 +5,17 @@ using Yarn.Unity;
 [RequireComponent(typeof(AudioSource))]
 public class StartDialogue : MonoBehaviour
 {
+    private bool firstTime = true;
+
+    [Header("Dialogue")]
     public DialogueRunner dialogueRunner;
     public Canvas dialogueCanvas;
-    private bool firstTime = true;
     
     [Header("Audio")]
-    private AudioSource audioSource;
     public AudioClip radioCallingSound;
     public AudioClip radioAnswerSound;
-    
+    private AudioSource audioSource;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
