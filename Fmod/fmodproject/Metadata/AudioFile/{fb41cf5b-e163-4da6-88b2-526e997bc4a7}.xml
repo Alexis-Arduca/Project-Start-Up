@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fb41cf5b-e163-4da6-88b2-526e997bc4a7}">
+		<property name="assetPath">
+			<value>ImpactTreeFall_S08IM.494.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8826666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbb524c1-d392-464e-ab9b-8b5f8d86d408}</destination>
+		</relationship>
+	</object>
+</objects>

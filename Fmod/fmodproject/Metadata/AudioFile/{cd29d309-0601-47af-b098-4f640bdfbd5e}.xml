@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cd29d309-0601-47af-b098-4f640bdfbd5e}">
+		<property name="assetPath">
+			<value>SPLC-5547_FX_Oneshot_Metallic_Scrapes_Screech_Long_Groaning.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>192</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>13.634666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbb524c1-d392-464e-ab9b-8b5f8d86d408}</destination>
+		</relationship>
+	</object>
+</objects>

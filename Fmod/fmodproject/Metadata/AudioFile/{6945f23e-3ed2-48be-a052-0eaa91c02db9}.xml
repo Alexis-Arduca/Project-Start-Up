@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6945f23e-3ed2-48be-a052-0eaa91c02db9}">
+		<property name="assetPath">
+			<value>PoliceSirenPassBy_HV.587.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.6853333333333325</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbb524c1-d392-464e-ab9b-8b5f8d86d408}</destination>
+		</relationship>
+	</object>
+</objects>

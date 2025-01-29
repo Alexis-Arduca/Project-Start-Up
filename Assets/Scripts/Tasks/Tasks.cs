@@ -10,11 +10,29 @@ public class Tasks : ScriptableObject
     [Header("General")]
     public string taskName;
     public string description;
-    
-    public GameObject taskPrefab;
 
-    public Tasks(string name)
+    [Header("Mini-Game Settings")]
+    public GameObject taskPrefab;
+    public bool isCompleted;
+
+    public void InitializeTask()
     {
-        taskName = name;
+        isCompleted = false;
+        Debug.Log($"Task {taskName} initialized.");
+    }
+
+    public void StartTask()
+    {
+        Debug.Log($"Task {taskName} started!");
+        if (taskPrefab != null)
+        {
+            GameObject taskInstance = Instantiate(taskPrefab);
+        }
+    }
+
+    public void CompleteTask()
+    {
+        isCompleted = true;
+        Debug.Log($"Task {taskName} completed!");
     }
 }

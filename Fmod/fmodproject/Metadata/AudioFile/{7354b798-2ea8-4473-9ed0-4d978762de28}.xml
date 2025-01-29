@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7354b798-2ea8-4473-9ed0-4d978762de28}">
+		<property name="assetPath">
+			<value>FlashlightSwitchOff_SFXB.92.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.15466666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbb524c1-d392-464e-ab9b-8b5f8d86d408}</destination>
+		</relationship>
+	</object>
+</objects>
