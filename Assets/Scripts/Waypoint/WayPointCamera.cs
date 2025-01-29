@@ -76,6 +76,15 @@ public class WayPointCamera : MonoBehaviour
                 continue;
             }
 
+            InteractableObject interactable = wayPointObj.GetComponent<InteractableObject>();
+
+            if (wayPointObj == null || !wayPointObj.activeSelf || wayPointObj.GetComponent<WayPoint>() == null || (interactable != null && !interactable.canInteract))
+            {
+                onScreenMarker.SetActive(false);
+                continue;
+            }
+
+
             TextMeshProUGUI distanceText = onScreenMarker.GetComponentInChildren<TextMeshProUGUI>();
             distanceText.text = ((int)dist) + " M";
 
