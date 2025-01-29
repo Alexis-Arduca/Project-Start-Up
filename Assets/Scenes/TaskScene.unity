@@ -439,9 +439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radio: {fileID: 1089330562}
   interactableObjects:
-  - {fileID: 379630612}
   - {fileID: 1649858644}
-  initTutorial: 0
+  - {fileID: 379630612}
+  secondDialogue: {fileID: 11400000, guid: f4eafd4f52e6b4c40b42a09527a16a91, type: 2}
 --- !u!224 &331129064 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1651608429653226511, guid: 2a1a7259445ecb840920c0ae96f6adf7, type: 3}
@@ -577,7 +577,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33005e1f1a7ea884b893cbe10d3949ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 0
   task: {fileID: 11400000, guid: d6a7fd39791a85743bbd0b3111dab465, type: 2}
+  objectIndex: 0
 --- !u!136 &379630614
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3302,7 +3304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33005e1f1a7ea884b893cbe10d3949ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 0
   task: {fileID: 11400000, guid: 888f36073b24d0b45906092bcccdd861, type: 2}
+  objectIndex: 2
 --- !u!136 &1089330566
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4580,7 +4584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33005e1f1a7ea884b893cbe10d3949ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 0
   task: {fileID: 11400000, guid: 076ebb0809e75c349984b62a6e250459, type: 2}
+  objectIndex: 1
 --- !u!136 &1649858647
 CapsuleCollider:
   m_ObjectHideFlags: 0
