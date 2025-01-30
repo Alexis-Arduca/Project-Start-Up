@@ -96,10 +96,10 @@ public class WayPointCamera : MonoBehaviour
                 continue;
             }
 
-            float minX = -onScreenMarker.GetComponentInChildren<Image>().GetPixelAdjustedRect().width / 8;
+            float minX = -onScreenMarker.GetComponentInChildren<RawImage>().GetPixelAdjustedRect().width / 8;
             float maxX = Screen.width - minX;
 
-            float minY = -onScreenMarker.GetComponentInChildren<Image>().GetPixelAdjustedRect().height / 8;
+            float minY = -onScreenMarker.GetComponentInChildren<RawImage>().GetPixelAdjustedRect().height / 8;
             float maxY = Screen.height - minY;
 
             Vector2 pos = cam.WorldToScreenPoint(wayPointObj.transform.position);

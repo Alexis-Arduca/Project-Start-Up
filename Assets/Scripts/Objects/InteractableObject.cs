@@ -43,6 +43,7 @@ public class InteractableObject : MonoBehaviour
         {
             if (task != null)
             {
+                canInteract = false;
                 StartTask();
             }
             else
@@ -68,9 +69,8 @@ public class InteractableObject : MonoBehaviour
 
     private void FinishTask()
     {
-        Debug.Log("===[ Je suis entrer ici ]===");
-        canInteract = !canInteract;
         GameEventsManager.instance.playerEvents.OnActionChange();
+        taskStart = false;
 
         Debug.Log(this.gameObject);
         if (isTutorial == 1) {

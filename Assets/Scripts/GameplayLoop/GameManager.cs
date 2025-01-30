@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Tasks secondDialogue;
     private bool tutorial = true;
     private bool initTutorial = false;
+    private bool noTask = false;
 
     // Start is called before the first frame update
     void Start()
@@ -83,9 +84,40 @@ public class GameManager : MonoBehaviour
 
     private void GameLoop()
     {
-        // Game Loop here
-        // The goal in my view is to have some random events at some moment in the game (like fnaf). When a event occur is highlighted
-        // / marked and we have to fix it
+        if (!noTask) {
+            StartRandomEvents();
+        }
+    }
+
+    private void StartRandomEvents()
+    {
+        noTask = true;
+        StartCoroutine(RandomEventLoop());
+    }
+
+    private IEnumerator RandomEventLoop()
+    {
+        while (!tutorial)
+        {
+            float randomDelay = Random.Range(30f, 120f);
+            yield return new WaitForSeconds(randomDelay);
+
+            TriggerRandomEvent();
+        }
+    }
+
+    private void TriggerRandomEvent()
+    {
+        noTask = false;
+        if (interactableObjects.Length > 0)
+        {
+            GameObject randomObject = GetRandomGameObject();
+
+            Debug.Log($"New Event: {randomObject.name}!");
+
+            randomObject.GetComponent<InteractableObject>().ChangeInteraction(true);
+            randomObject.GetComponent<MessagePopup>().PopUpState(true);
+        }
     }
 
     GameObject GetRandomGameObject()
