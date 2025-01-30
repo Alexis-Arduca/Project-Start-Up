@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Yarn.Unity;
 
 public class GameEventsManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class GameEventsManager : MonoBehaviour
     public GameObject spotLight;
     public GameObject tileGame;
     public Inventory inventory;
+    
+    [Header("Dialogue")]
+    public DialogueRunner radioDialogueRunner;
+    public Canvas radioDialogueCanvas;
 
     /* Temp */
     public Item flashlight;
