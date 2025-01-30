@@ -11,12 +11,13 @@ public class IntroductionDialogue : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("Oui");
+        GameEventsManager.instance.gameLoopEvents.OnRadioEnd();
+
         dialogueRunner = GameEventsManager.instance.radioDialogueRunner;
         dialogueCanvas = GameEventsManager.instance.radioDialogueCanvas;
         
-        GameEventsManager.instance.gameLoopEvents.OnRadioEnd();
         dialogueCanvas.enabled = true;
-        Debug.Log("Hey I'm Tutorial Guy");
         RadioOn();
         Destroy(gameObject);
     }

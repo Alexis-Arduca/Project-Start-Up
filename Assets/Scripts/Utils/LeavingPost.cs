@@ -14,7 +14,7 @@ public class LeavingPost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject canvas = GameObject.Find("Canvas");
+        GameObject canvas = GameObject.Find("CanvasMain");
 
         if (canvas != null)
         {
