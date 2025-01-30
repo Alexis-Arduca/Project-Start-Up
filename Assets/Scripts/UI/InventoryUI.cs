@@ -63,8 +63,6 @@ public class InventoryUI : MonoBehaviour
 
     void EquipSelectedItem()
     {
-        inventory.UnequipItem(inventory.GetEquippedItem()?.itemName);
-
         Item itemToEquip = null;
 
         foreach (Item item in inventory.items)
@@ -78,7 +76,12 @@ public class InventoryUI : MonoBehaviour
 
         if (itemToEquip != null)
         {
-            inventory.EquipItem(itemToEquip.itemName);
+            if (inventory.GetEquippedItem() != itemToEquip) {
+                inventory.UnequipItem(inventory.GetEquippedItem()?.itemName);
+                inventory.EquipItem(itemToEquip.itemName);
+            } else {
+                inventory.UnequipItem(inventory.GetEquippedItem()?.itemName);
+            }
         }
 
         UpdateItemDisplay();

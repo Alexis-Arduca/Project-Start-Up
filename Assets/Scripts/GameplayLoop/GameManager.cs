@@ -139,6 +139,8 @@ public class GameManager : MonoBehaviour
             interactable.GetComponent<MessagePopup>().PopUpState(false);
 
             GameEventsManager.instance.gameLoopEvents.OnPeopleDie();
+        } else {
+            GameEventsManager.instance.gameLoopEvents.OnPeopleSave();
         }
     }
 
