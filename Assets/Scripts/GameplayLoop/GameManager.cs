@@ -115,10 +115,33 @@ public class GameManager : MonoBehaviour
 
             Debug.Log($"New Event: {randomObject.name}!");
 
-            randomObject.GetComponent<InteractableObject>().ChangeInteraction(true);
+            InteractableObject interactable = randomObject.GetComponent<InteractableObject>();
+            interactable.ChangeInteraction(true);
+            interactable.HaveInteractUpdate(false);
             randomObject.GetComponent<MessagePopup>().PopUpState(true);
+
+            StartCoroutine(CheckTaskCompletion(interactable));
         }
     }
+
+    private IEnumerator CheckTaskCompletion(InteractableObject interactable)
+    {
+        yield return new WaitForSeconds(30f);
+
+        if (interactable.GetHaveInteract() == false)
+        {
+            interactable.ChangeInteraction(false);
+            interactable.GetComponent<MessagePopup>().PopUpState(false);
+
+            GameEventsManager.instance.gameLoopEvents.OnPeopleDie();
+        } else if (interactable.GetHaveInteract() == true && interactable.GetTaskStart() == true) {
+            interactable.ChangeInteraction(false);
+            interactable.GetComponent<MessagePopup>().PopUpState(false);
+
+            GameEventsManager.instance.gameLoopEvents.OnPeopleDie();
+        }
+    }
+
 
     GameObject GetRandomGameObject()
     {

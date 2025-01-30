@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 320246543}
   - component: {fileID: 320246546}
   - component: {fileID: 320246547}
+  - component: {fileID: 320246548}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -477,6 +478,19 @@ MonoBehaviour:
   - {fileID: 1649858644}
   - {fileID: 379630612}
   secondDialogue: {fileID: 11400000, guid: f4eafd4f52e6b4c40b42a09527a16a91, type: 2}
+--- !u!114 &320246548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87f416113638744884296b8789b665d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDieToEnd: 2
 --- !u!224 &331129064 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1651608429653226511, guid: 2a1a7259445ecb840920c0ae96f6adf7, type: 3}

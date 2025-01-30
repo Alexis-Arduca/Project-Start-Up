@@ -65,4 +65,22 @@ public class GameLoopEvents
             onRadioEnd();
         }
     }
+
+    public event Action onPeopleDie;
+    public void OnPeopleDie()
+    {
+        if (onPeopleDie != null)
+        {
+            onPeopleDie();
+        }
+    }
+
+    public event Action onPeopleSave;
+    public void OnPeopleSave()
+    {
+        if (onPeopleSave != null)
+        {
+            onPeopleSave();
+        }
+    }
 }
