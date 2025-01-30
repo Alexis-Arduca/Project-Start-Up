@@ -63,7 +63,11 @@ GraphicsSettings:
   m_SRPDefaultSettings:
     UnityEngine.Rendering.HighDefinition.HDRenderPipeline: {fileID: 11400000, guid: 8ec7a7dcf8b314545b2303c9261879fd, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
     UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 31fe1f32ea4b74b66806e787121ab791, type: 2}
+=======
+    UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 204785e74db2424478d3a2065fc62cd8, type: 2}
+>>>>>>> origin/main
 =======
     UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: c144b89e9d712054395705f196e6c946, type: 2}
 >>>>>>> origin/main
