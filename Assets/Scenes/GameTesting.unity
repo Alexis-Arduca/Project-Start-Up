@@ -1650,20 +1650,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64c929999a85744249013551014a41af, type: 3}
   m_PrefabInstance: {fileID: 1932273239}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &516623727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516623725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f2acbb7a694064daad05af7edce78b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  markerPrefab: {fileID: 7247168295814205656, guid: 57892ae993cfe19458aa0936715b539d, type: 3}
-  maxDisplayDistance: 100
 --- !u!114 &516623728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,21 +1664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpMessage: Press "o" to launch minigame
   popUpShow: 0
---- !u!114 &516623729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516623725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33005e1f1a7ea884b893cbe10d3949ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canInteract: 0
-  task: {fileID: 11400000, guid: 076ebb0809e75c349984b62a6e250459, type: 2}
-  objectIndex: 3
 --- !u!65 &516623730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6220,13 +6191,7 @@ PrefabInstance:
       addedObject: {fileID: 516623730}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64c929999a85744249013551014a41af, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 516623729}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64c929999a85744249013551014a41af, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 516623728}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64c929999a85744249013551014a41af, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 516623727}
   m_SourcePrefab: {fileID: 100100000, guid: 64c929999a85744249013551014a41af, type: 3}
 --- !u!1 &2004056772
 GameObject:
