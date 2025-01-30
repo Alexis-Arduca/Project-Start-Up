@@ -3,7 +3,27 @@ guid: d41fa7c0ffb4a554799433d83653f09e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabinet
+    second: {fileID: 2100000, guid: 6e00895b8ff5b410f95fa55ef47519f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabinet_corner
+    second: {fileID: 2100000, guid: 64ef02c0538cf41cab86f76d651afefe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_bottom
+    second: {fileID: 2100000, guid: 1e0c19b77a55d481fb6b24ace0e84963, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_top
+    second: {fileID: 2100000, guid: f5de032c13a6f4aa6932c139b0dfbc4d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
