@@ -14,14 +14,8 @@ public class GeneratorBehavior : MonoBehaviour
     [Header("Dialogue")]
     public DialogueRunner dialogueRunner;
     
-    [Header("Audio")]
-    public AudioClip generatorSwitchSound;
-    public AudioClip generatorDownSound;
-    private AudioSource audioSource;
-    
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         generatorRenderer = GetComponent<Renderer>();
     }
     
@@ -50,17 +44,14 @@ public class GeneratorBehavior : MonoBehaviour
         if (isOn && FuelConsumption.fuelLevel <= 0)
         {
             isOn = false;
-            audioSource.PlayOneShot(generatorDownSound);
         }
         
         if (isOn && fuelConsumptionCoroutine == null)
         {
-            audioSource.PlayOneShot(generatorSwitchSound);
             fuelConsumptionCoroutine = StartCoroutine(FuelConsumption.ConsumeFuel());
         }
         else if (!isOn && fuelConsumptionCoroutine != null)
         {
-            audioSource.PlayOneShot(generatorSwitchSound);
             StopCoroutine(fuelConsumptionCoroutine);
             fuelConsumptionCoroutine = null;
         }
