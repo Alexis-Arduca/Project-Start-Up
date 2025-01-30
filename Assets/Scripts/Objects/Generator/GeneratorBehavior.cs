@@ -1,7 +1,6 @@
 using UnityEngine;
 using Yarn.Unity;
 
-[RequireComponent(typeof(AudioSource))]
 public class GeneratorBehavior : MonoBehaviour
 {
     public static bool isOn;
