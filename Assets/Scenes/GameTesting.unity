@@ -3785,6 +3785,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d9aea30335d6344ead58bab17492097, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1154145129}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d9aea30335d6344ead58bab17492097, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1154145130}
   m_SourcePrefab: {fileID: 100100000, guid: 8d9aea30335d6344ead58bab17492097, type: 3}
 --- !u!4 &1154145123 stripped
 Transform:
@@ -3882,6 +3885,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markerPrefab: {fileID: 7247168295814205656, guid: 57892ae993cfe19458aa0936715b539d, type: 3}
   maxDisplayDistance: 100
+--- !u!114 &1154145130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154145124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097b95c9f69f04f2d8c08a817e7786af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueView: {fileID: 1406504807}
+  continueActionType: 1
+  continueActionKeyCode: 32
+  continueActionButtonName: Jump
+  continueActionOnButtonRelease: 0
 --- !u!1001 &1206445528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4710,6 +4730,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388695032}
   m_Mesh: {fileID: -772796169288715743, guid: d41fa7c0ffb4a554799433d83653f09e, type: 3}
+--- !u!114 &1406504807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7778558435068644806, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 957881336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcdd604a328c4ab296f048eb7b3a925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494024988
 GameObject:
   m_ObjectHideFlags: 0
