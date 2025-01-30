@@ -12,6 +12,7 @@ public class ColorLinkTask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        points = 0;
         container = GameEventsManager.instance.ColorLink;
         gridContainer = GameEventsManager.instance.GridContainer;
 
@@ -67,6 +68,7 @@ public class ColorLinkTask : MonoBehaviour
 
             if (points == 4) {
                 Debug.Log("Won");
+                ResetButton();
                 container.SetActive(false);
                 GameEventsManager.instance.gameLoopEvents.OnColorLinkEnd();
                 Destroy(this.gameObject);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+    public bool haveInteract;
     public bool canInteract;
     private bool taskStart;
     private int isTutorial;
@@ -13,6 +14,7 @@ public class InteractableObject : MonoBehaviour
 
     void Start()
     {
+        haveInteract = false;
         canInteract = false;
         taskStart = false;
         isTutorial = 0;
@@ -41,8 +43,10 @@ public class InteractableObject : MonoBehaviour
     {
         if (canInteract == true && other.CompareTag("Player") && Input.GetKeyDown(KeyCode.O) && taskStart == false)
         {
+            haveInteract = true;
             if (task != null)
             {
+                canInteract = false;
                 StartTask();
             }
             else
@@ -54,7 +58,7 @@ public class InteractableObject : MonoBehaviour
 
     private void StartTask()
     {
-        taskStart = !taskStart;
+        taskStart = true;
         if (task.taskPrefab != null)
         {
             instantiatedTask = Instantiate(task.taskPrefab);
@@ -68,9 +72,8 @@ public class InteractableObject : MonoBehaviour
 
     private void FinishTask()
     {
-        Debug.Log("===[ Je suis entrer ici ]===");
-        canInteract = !canInteract;
         GameEventsManager.instance.playerEvents.OnActionChange();
+        taskStart = false;
 
         Debug.Log(this.gameObject);
         if (isTutorial == 1) {
@@ -102,5 +105,20 @@ public class InteractableObject : MonoBehaviour
     {
         task = newTask;
         taskStart = false;
+    }
+
+    public void HaveInteractUpdate(bool a)
+    {
+        haveInteract = a;
+    }
+
+    public bool GetHaveInteract()
+    {
+        return haveInteract;
+    }
+
+    public bool GetTaskStart()
+    {
+        return taskStart;
     }
 }
