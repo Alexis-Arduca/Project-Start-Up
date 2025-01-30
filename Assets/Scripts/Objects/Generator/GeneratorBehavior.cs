@@ -4,19 +4,12 @@ using Yarn.Unity;
 public class GeneratorBehavior : MonoBehaviour
 {
     public static bool isOn;
-    private Renderer generatorRenderer;
 
     // Fuel consumption
     private Coroutine fuelConsumptionCoroutine;
-    public Material[] generatorMaterial;
 
     [Header("Dialogue")]
     public DialogueRunner dialogueRunner;
-    
-    private void Start()
-    {
-        generatorRenderer = GetComponent<Renderer>();
-    }
     
     [YarnFunction("printFuelLevel")]
     public static int PrintFuelLevel()
@@ -26,19 +19,6 @@ public class GeneratorBehavior : MonoBehaviour
 
     private void Update()
     {
-        switch (FuelConsumption.fuelLevel)
-        {
-            case > 75:
-                generatorRenderer.material = generatorMaterial[0];
-                break;
-            case > 15:
-                generatorRenderer.material = generatorMaterial[1];
-                break;
-            case > 0:
-                generatorRenderer.material = generatorMaterial[2];
-                break;
-        }
-        
         // Check if the generator is on while the fuel level is 0
         if (isOn && FuelConsumption.fuelLevel <= 0)
         {
