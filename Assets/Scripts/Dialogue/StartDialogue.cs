@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using Yarn.Unity;
 
-[RequireComponent(typeof(AudioSource))]
 public class StartDialogue : MonoBehaviour
 {
     private bool firstTime = true;
@@ -11,14 +10,8 @@ public class StartDialogue : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public Canvas dialogueCanvas;
     
-    [Header("Audio")]
-    public AudioClip radioCallingSound;
-    public AudioClip radioAnswerSound;
-    private AudioSource audioSource;
-
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         dialogueCanvas.enabled = true;
     }
 
@@ -26,7 +19,6 @@ public class StartDialogue : MonoBehaviour
     {
         if (GeneratorBehavior.isOn && firstTime)
         {
-            audioSource.PlayOneShot(radioCallingSound);
             firstTime = false;
         }
     }
@@ -48,8 +40,6 @@ public class StartDialogue : MonoBehaviour
     
     private void RadioOn()
     {
-        audioSource.Stop();
-        audioSource.PlayOneShot(radioAnswerSound);
         if (!dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.StartDialogue("Demo");
@@ -67,7 +57,6 @@ public class StartDialogue : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        audioSource.Stop();
         dialogueCanvas.enabled = false;
     }
 }
